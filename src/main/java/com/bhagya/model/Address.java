@@ -1,4 +1,7 @@
-package model;
+package com.bhagya.model;
+
+import com.bhagya.jView.View;
+import com.fasterxml.jackson.annotation.JsonView;
 
 import javax.persistence.*;
 
@@ -11,13 +14,17 @@ public class Address {
     @Id
     @GeneratedValue
     @Column(name = "id")
+//    @JsonView(View.Summary.class)
     private int id;
     @Column(name = "addressName")
+//    @JsonView(View.Summary.class)
     private String addressName;
     @Column(name = "addressZip")
+//    @JsonView(View.Summary.class)
     private  String addressZip;
-    @ManyToOne
-    private Student student;
+
+//    @ManyToOne
+//    private Student student;
 
 //    getters
 
@@ -33,9 +40,9 @@ public class Address {
         return addressZip;
     }
 
-    public Student getStudent() {
-        return student;
-    }
+//    public Student getStudent() {
+//        return student;
+//    }
 
     //    setters
 
@@ -51,7 +58,7 @@ public class Address {
         this.id = id;
     }
 
-    public void setStudent(Student student) {
-        this.student = student;
-    }
+//    public void setStudent(Student student) {
+//        this.student = student;
+//    }
 }

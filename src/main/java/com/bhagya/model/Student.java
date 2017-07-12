@@ -1,4 +1,4 @@
-package model;
+package com.bhagya.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -13,16 +13,17 @@ public class Student {
     @Id
     @GeneratedValue
     @Column(name = "studentId")
-    private long studentId;
+    private int studentId;
     @Column(name = "studentName")
     private String studentName;
     @Column(name = "studentMobile")
     private String studentMobile;
-    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL}, mappedBy = "studentId")
+    @OneToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinColumn
     private List<Address> addresses = new ArrayList<Address>();
 
 //getters
-    public long getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
@@ -39,7 +40,7 @@ public class Student {
     }
 
     //setters
-    public void setStudentId(long studentId) {
+    public void setStudentId(int studentId) {
         this.studentId = studentId;
     }
 
@@ -51,12 +52,12 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public void setAddresses(List<Address> addresses) {
-        for (Address address:addresses){
-            address.setStudent(this);
-        }
-        this.addresses=addresses;
-
-    }
+//    public void setAddresses(List<Address> addresses) {
+//        for (Address address:addresses){
+//            address.setStudent(this);
+//        }
+//        this.addresses=addresses;
+//
+//    }
 
 }

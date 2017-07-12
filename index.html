@@ -1,0 +1,72 @@
+<html ng-app="myApp">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="script.js"></script>
+
+</head>
+<body>
+<div>
+	<div ng-controller="myCtrl">
+	
+	
+	
+		<div class="container">
+		
+		<h2> Submit details of the student</h2>
+		
+			<form ng-submit="submitStudent()">
+				<div>
+					<div>Name : <input type="text" ng-model="studentName"/></div>
+					<div><span></span></div>
+				</div>
+				<div>
+					<div>Mobile Number : <input type="text" ng-model="studentMob"/></div>
+					<div><span></span></div>
+				</div>
+				
+				<h4>Address details of the student</h4>
+				<div>
+					<div>addName : <input type="text" ng-model="studentAdd1"/></div>
+					<div><span></span></div>
+				</div>
+				<div>
+					<div>zip code: <input type="number" ng-model="zip"/></div>
+					<div><span></span></div>
+				</div>
+				
+				<input type="submit" value="Submit"/>
+				
+			</form>
+		</div>
+	</div>
+	<div  ng-controller="getid">
+	<h2>Find Student by ID</h2>
+		<div>
+		<div class="getcontainer">
+				<form>
+					<div>
+						<div>Id: <input type="text" ng-model="getid"/></div>
+						<div><span></span></div>
+					</div>
+
+					<input type="submit" value="Search"  ng-click="submitReq()"/>
+					
+				<form>
+			</div>
+			
+		</div>
+		<div>
+			<div>name : {{user.studentName}}</div>
+			<div>mobile : {{user.studentMobile}}</div>
+			<div><b>Address</b></div>
+       <div>address1 : {{user.addresses[0].addressName}}</div> 
+       <div>zip code 1 : {{user.addresses[0].addressZip}}</div> 
+       <div>address2 : {{user.addresses[1].addressName}}</div> 
+       <div>zip code2 : {{user.addresses[1].addressZip}}</div> 
+      </div>
+		</div>
+	</div>
+	
+</div>
+</body>
+</html>

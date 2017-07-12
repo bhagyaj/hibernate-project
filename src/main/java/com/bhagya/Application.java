@@ -1,5 +1,7 @@
+package com.bhagya;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScans;
 
 /**
  * Created by bhagya on 7/11/17.
