@@ -10,11 +10,15 @@ import com.bhagya.service.StudentService;
 /**
  * Created by bhagya on 7/11/17.
  */
+
 @RestController
 public class StudentController {
     @Autowired
     StudentService studentService;
-
+    @RequestMapping("/")
+    public String home() {
+        return "Hello World";
+    }
     @RequestMapping(value = "/addOwner", method = RequestMethod.POST)
     @CrossOrigin
     public void updateEvent(@RequestBody Student student){
